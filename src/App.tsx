@@ -7,6 +7,7 @@ import Post from "./components/Post";
 import Sidebar from "./components/Sidebar";
 import { Switch } from "react-router";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import Profile from "./components/pages/Profile";
 
 const Main = styled.div`
   display: flex;
@@ -50,7 +51,7 @@ function App() {
     <Router>
       <Switch>
         <Route path="/profile">
-          <div>PROFILE PAGE</div>
+          <Profile />
         </Route>
         <Route path="/">
           <div className="App">

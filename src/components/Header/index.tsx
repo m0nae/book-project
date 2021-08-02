@@ -16,7 +16,7 @@ export default function Header() {
       <Wrapper>
         <Container>
           <Left>
-            <Logo>LOGO</Logo>
+            <Logo>BOOKLY</Logo>
             <Links>
               <Link>Feed</Link>
               <Link>My Books</Link>

@@ -1,24 +1,28 @@
+import { Avatar } from "global-styles";
 import styled from "styled-components";
+
+export const Wrapper = styled.div`
+  width: 90%;
+`;
 
 export const Container = styled.div`
   position: relative;
   min-height: 18rem;
   height: fit-content;
-  width: 80%;
   border-radius: 6px;
-  border: 3px solid whitesmoke;
-  padding: 1rem 1.7rem 5rem 3rem;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border: 3px solid #e6e6e6;
+  border-bottom: 0px;
+  padding: 1rem 1.7rem 2rem 3rem;
   text-align: left;
-  /* background-color: grey; */
+  /* background-color: #dbdbdb; */
 `;
 
-export const Avatar = styled.img`
+export const PostAvatar = styled(Avatar)`
   position: absolute;
   top: -1rem;
   left: -1.5rem;
-  height: 60px;
-  width: 60px;
-  border-radius: 50%;
 `;
 
 export const Status = styled.div`
@@ -70,14 +74,41 @@ export const Content = styled.div`
   }
 `;
 
+export const Actions = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1rem;
+  width: 100%;
+  margin-top: 1rem;
+`;
+
+export const SocialActions = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 export const Comment = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
   height: 50px;
   width: 100%;
-  background-color: darkgrey;
-  border: 1px solid darkgrey;
+  background-color: #e2e2e2;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
 `;
+
+export const CommentAvatar = styled(Avatar)`
+  height: 30px;
+  width: 30px;
+  margin-right: 0.5rem;
+`;
+
+export const CommentInput = styled.input`
+  height: 60%;
+  width: 90%;
+  padding-left: 0.5rem;
+`;
+
+export const Rating = styled.div``;
