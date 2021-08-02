@@ -52,5 +52,4 @@ export const Book = styled.div`
     padding-left: 0.5rem;
   }
 `;
-
 // export const BookCover = styled.img

@@ -1,4 +1,13 @@
-import { Avatar, Container, Content, Status } from "./index.styles";
+import {
+  Avatar,
+  Container,
+  Content,
+  ProgressBar,
+  Status,
+  StatusTop,
+  StatusBottom,
+  Comment,
+} from "./index.styles";
 
 export default function Post() {
   return (
@@ -11,8 +20,14 @@ export default function Post() {
           />
         </a>
         <Status>
-          <p>Username made progress on Strategic Planning for Dummies</p>
-          <span>16h</span>
+          <StatusTop>
+            <p>Username made progress on Strategic Planning for Dummies</p>
+            <span>16h</span>
+          </StatusTop>
+          <StatusBottom>
+            <ProgressBar value="70" max="100" />
+            <p>pg 70 of 100</p>
+          </StatusBottom>
         </Status>
         <Content>
           <img
@@ -30,6 +45,7 @@ export default function Post() {
             </p>
           </div>
         </Content>
+        <Comment />
       </Container>
     </>
   );

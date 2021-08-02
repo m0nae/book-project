@@ -28,7 +28,7 @@ const Feed = styled.div`
   margin-bottom: 1rem;
 
   > div {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
   /* background-color: lightblue; */
 `;

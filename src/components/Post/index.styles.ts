@@ -7,7 +7,7 @@ export const Container = styled.div`
   width: 80%;
   border-radius: 6px;
   border: 3px solid whitesmoke;
-  padding: 1rem 1.7rem 1rem 3rem;
+  padding: 1rem 1.7rem 5rem 3rem;
   text-align: left;
   /* background-color: grey; */
 `;
@@ -22,7 +22,6 @@ export const Avatar = styled.img`
 `;
 
 export const Status = styled.div`
-  display: flex;
   width: 100%;
   min-height: 4rem;
   height: fit-content;
@@ -33,6 +32,25 @@ export const Status = styled.div`
     font-size: 1rem;
     color: darkgrey;
   }
+`;
+
+export const StatusTop = styled.div`
+  display: flex;
+`;
+
+export const StatusBottom = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+`;
+
+export const ProgressBar = styled.progress`
+  width: 40%;
+  height: 1.5rem;
+  margin-right: 0.7rem;
+  color: darkgrey;
 `;
 
 export const Content = styled.div`
@@ -52,4 +70,14 @@ export const Content = styled.div`
   }
 `;
 
-export const Comment = styled.div``;
+export const Comment = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  background-color: darkgrey;
+  border: 1px solid darkgrey;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+`;
