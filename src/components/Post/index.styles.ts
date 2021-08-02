@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   position: relative;
-  min-height: 30%;
+  min-height: 18rem;
   height: fit-content;
   width: 80%;
   border-radius: 6px;
@@ -37,6 +37,19 @@ export const Status = styled.div`
 
 export const Content = styled.div`
   margin-top: 1rem;
+  display: flex;
+
+  > div {
+    p {
+      margin-top: 0.4rem;
+    }
+  }
+
+  img {
+    width: 150px;
+    height: 200px;
+    margin-right: 1rem;
+  }
 `;
 
 export const Comment = styled.div``;

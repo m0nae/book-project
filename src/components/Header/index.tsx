@@ -7,6 +7,7 @@ import {
   Logo,
   Right,
   Avatar,
+  Search,
 } from "./index.styles";
 
 export default function Header() {
@@ -23,7 +24,7 @@ export default function Header() {
             </Links>
           </Left>
           <Right>
-            <input />
+            <Search placeholder="Search" />
             <Link>BAR</Link>
             <Link>BAR</Link>
             <Link>

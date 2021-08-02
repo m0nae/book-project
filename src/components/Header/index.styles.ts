@@ -49,6 +49,15 @@ export const Right = styled(Left)`
   }
 `;
 
+export const Search = styled.input`
+  height: 2rem;
+  border-radius: 3px;
+  background-color: #e8e8e8;
+  outline: none;
+  border: none;
+  padding-left: 1rem;
+`;
+
 export const Avatar = styled.img`
   height: 40px;
   width: 40px;

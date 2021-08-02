@@ -5,6 +5,8 @@ import Header from "./components/Header";
 import styled from "styled-components";
 import Post from "./components/Post";
 import Sidebar from "./components/Sidebar";
+import { Switch } from "react-router";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 const Main = styled.div`
   display: flex;
@@ -19,9 +21,11 @@ const Main = styled.div`
 const Feed = styled.div`
   /* display: flex; */
   justify-content: center;
-  height: 100%;
+  height: fit-content;
   width: 70%;
   padding-top: 3rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 
   > div {
     margin-bottom: 1.5rem;
@@ -30,8 +34,12 @@ const Feed = styled.div`
 `;
 
 const SidebarContain = styled.div`
-  height: 100%;
+  height: fit-content;
+  min-height: 100vh;
   width: 30%;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  overflow-y: auto;
   /* background-color: lightsalmon; */
 `;
 
@@ -39,19 +47,28 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="App">
-      <Header />
-      <Main>
-        <Feed>
-          <Post />
-          <Post />
-          <Post />
-        </Feed>
-        <SidebarContain>
-          <Sidebar />
-        </SidebarContain>
-      </Main>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/profile">
+          <div>PROFILE PAGE</div>
+        </Route>
+        <Route path="/">
+          <div className="App">
+            <Header />
+            <Main>
+              <Feed>
+                <Post />
+                <Post />
+                <Post />
+              </Feed>
+              <SidebarContain>
+                <Sidebar />
+              </SidebarContain>
+            </Main>
+          </div>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
