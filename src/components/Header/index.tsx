@@ -25,7 +25,11 @@ import {
 } from "@chakra-ui/react";
 import { useRef } from "react";
 
-export default function Header() {
+export interface HeaderProps {
+  staticPosition?: boolean;
+}
+
+export default function Header({ staticPosition }: HeaderProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   // const handleHover = () => {
