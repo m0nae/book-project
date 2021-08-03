@@ -186,7 +186,7 @@ export default function Profile() {
   );
 }
 
-function Book() {
+export function Book() {
   return (
     <BookContainer>
       <LargeBookCover src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1298417783l/23425.jpg" />

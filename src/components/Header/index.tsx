@@ -9,8 +9,33 @@ import {
   Avatar,
   Search,
 } from "./index.styles";
+import {
+  Button,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuIcon,
+  MenuCommand,
+  MenuDivider,
+  useDisclosure,
+} from "@chakra-ui/react";
+import { useRef } from "react";
 
 export default function Header() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  // const handleHover = () => {
+  //   setTimeout(() => {
+  //     if () {
+
+  //     }
+  //   }, 1500);
+  // };
+
   return (
     <>
       <Wrapper>
@@ -28,10 +53,25 @@ export default function Header() {
             <Link>BAR</Link>
             <Link>BAR</Link>
             <Link>
-              <Avatar
-                src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-                alt="Profile picture"
-              />
+              <Menu isOpen={isOpen} autoSelect>
+                <MenuButton onMouseEnter={onOpen}>
+                  <Avatar
+                    src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                    alt="Profile picture"
+                  />
+                </MenuButton>
+                <MenuList onMouseLeave={onClose}>
+                  <MenuItem as={Link} href="/profile">
+                    Profile
+                  </MenuItem>
+                  <MenuItem as={Link} href="/settings">
+                    Settings
+                  </MenuItem>
+                  <MenuItem as={Link} href="/logout">
+                    Logout
+                  </MenuItem>
+                </MenuList>
+              </Menu>
             </Link>
           </Right>
         </Container>

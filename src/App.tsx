@@ -8,6 +8,7 @@ import { Switch } from "react-router";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Profile from "./components/pages/Profile";
 import { GlobalStyles } from "global-styles";
+import MyBooks from "./components/pages/MyBooks";
 
 const Main = styled.div`
   display: flex;
@@ -54,6 +55,9 @@ function App() {
         <Switch>
           <Route path="/profile">
             <Profile />
+          </Route>
+          <Route path="/my-books">
+            <MyBooks />
           </Route>
           <Route path="/">
             <div className="App">

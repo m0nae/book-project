@@ -111,4 +111,7 @@ export const CommentInput = styled.input`
   padding-left: 0.5rem;
 `;
 
-export const Rating = styled.div``;
+export const Rating = styled.div`
+  display: flex;
+  align-items: center;
+`;
