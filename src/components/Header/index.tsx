@@ -18,7 +18,7 @@ export default function Header() {
           <Left>
             <Logo>BOOKLY</Logo>
             <Links>
-              <Link>Feed</Link>
+              <Link href="http://localhost:3000">Home</Link>
               <Link>My Books</Link>
               <Link>Browse</Link>
             </Links>
