@@ -1,8 +1,22 @@
 import { useState } from "react";
+import {
+  Button,
+  TabPanels,
+  Tab,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+} from "@chakra-ui/react";
 import Header from "../../Header";
 import {
-  BookList,
+  Main,
   About,
+  ProfileAvatarContainer,
   ProfileAvatar,
   Sidebar,
   Wrapper,
@@ -11,25 +25,109 @@ import {
   FavoriteBooks,
   BookCover,
   Stats,
+  BookList,
+  Book as BookContainer,
+  LargeBookCover,
+  BookInfo,
+  CustomTabs as Tabs,
+  CustomTabList as TabList,
+  CustomTabPanel as TabPanel,
 } from "./index.styles";
+import icon from "../../icons";
 
 export default function Profile() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const [following, setFollowing] = useState(false);
+  const book = {
+    image:
+      "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1298417783l/23425.jpg",
+    title: "Status Anxiety",
+    author: "Alan de Botton",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero voluptate odit eligendi ut deserunt recusandae illum similique",
+  };
+  const [favoriteBooks, setFavoriteBooks] = useState([
+    book,
+    book,
+    book,
+    book,
+    book,
+    book,
+    book,
+    book,
+    book,
+    book,
+  ]);
 
   const handleFollow = () => {
     setFollowing((state) => !state);
   };
 
+  // const openFavoriteBooks = () => {
+  //   onOpen();
+  // }
+
+  const FOLLOWING = (
+    <p>
+      <icon.Check
+        style={{
+          fontSize: "1.8rem",
+          position: "absolute",
+          top: "5",
+          left: "20%",
+        }}
+      />
+      FOLLOWING
+    </p>
+  );
+  const FOLLOW = <p>FOLLOW</p>;
+
+  const favoriteBooksList = favoriteBooks.map((book, index) => {
+    if (index >= 6) {
+      return;
+    } else {
+      return index === 5 ? (
+        <div onClick={() => onOpen()}>
+          <span>+{favoriteBooks.length - 5}</span>
+          <BookCover src={book.image} />
+        </div>
+      ) : (
+        <BookCover src={book.image} />
+      );
+    }
+  });
+
   return (
     <>
+      <Modal isOpen={isOpen} onClose={onClose} isCentered>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Modal Title</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>{/* <Lorem count={2} /> */}</ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3} onClick={onClose}>
+              Close
+            </Button>
+            <Button variant="ghost">Secondary Action</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
       <Header />
       <Wrapper>
         <Sidebar>
           <About>
-            <ProfileAvatar
-              src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-              alt="Profile picture"
-            />
+            <ProfileAvatarContainer>
+              <label htmlFor="photo-upload">
+                <icon.Edit />
+              </label>
+              <input type="file" id="photo-upload" name="photo-upload" />
+              <ProfileAvatar
+                src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                alt="Profile picture"
+              />
+            </ProfileAvatarContainer>
             <h1>Jane Doe</h1>
             <p>San Francisco, CA</p>
             <Stats>
@@ -47,27 +145,59 @@ export default function Profile() {
               </span>
             </Stats>
             <FollowBtn following={following} onClick={() => handleFollow()}>
-              {following ? "FOLLOWING" : "FOLLOW"}
+              {following ? FOLLOWING : FOLLOW}
             </FollowBtn>
             <MessageBtn>MESSAGE</MessageBtn>
           </About>
           <FavoriteBooks>
             <h2>FAVORITE BOOKS</h2>
-            <div>
-              <BookCover src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1298417783l/23425.jpg" />
-              <BookCover src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1298417783l/23425.jpg" />
-              <BookCover src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1298417783l/23425.jpg" />
-              <BookCover src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1298417783l/23425.jpg" />
-              <BookCover src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1298417783l/23425.jpg" />
-              <a href="#">
-                <span>+32</span>
-                <BookCover src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1298417783l/23425.jpg" />
-              </a>
-            </div>
+            <div>{favoriteBooksList}</div>
           </FavoriteBooks>
         </Sidebar>
-        <BookList />
+        <Main>
+          <Tabs>
+            <TabList>
+              <Tab>Currently Reading</Tab>
+              <Tab>To Read</Tab>
+              <Tab>Read</Tab>
+            </TabList>
+
+            <TabPanels>
+              <TabPanel>
+                <BookList>
+                  <Book></Book>
+                  <Book></Book>
+                  <Book></Book>
+                  <Book></Book>
+                  <Book></Book>
+                </BookList>
+              </TabPanel>
+              <TabPanel>
+                <p>two!</p>
+              </TabPanel>
+              <TabPanel>
+                <p>three!</p>
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
+        </Main>
       </Wrapper>
     </>
+  );
+}
+
+function Book() {
+  return (
+    <BookContainer>
+      <LargeBookCover src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1298417783l/23425.jpg" />
+      <BookInfo>
+        <h2>Status Anxiety</h2>
+        <h3>Alan de Botton</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+          voluptate odit eligendi ut deserunt recusandae illum similique
+        </p>
+      </BookInfo>
+    </BookContainer>
   );
 }

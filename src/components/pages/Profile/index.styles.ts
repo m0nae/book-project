@@ -1,4 +1,5 @@
 import { Avatar } from "global-styles";
+import { TabList, Tabs, TabPanel } from "@chakra-ui/react";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -16,14 +17,91 @@ export const Sidebar = styled.div`
   flex-direction: column;
   /* align-items: center; */
   height: 100%;
-  width: 30%;
+  width: 25%;
   /* background-color: lightblue; */
 `;
 
-export const BookList = styled.div`
+export const Main = styled.div`
   height: 100%;
   width: 70%;
+  padding: 1.3rem 2rem 0 2.6rem;
   /* background-color: tomato; */
+`;
+
+export const CustomTabs = styled(Tabs)`
+  [aria-selected="true"] {
+    border-color: var(--dark-red) !important;
+    color: grey !important;
+  }
+`;
+
+export const CustomTabPanel = styled(TabPanel)`
+  padding: 1rem 0 !important;
+`;
+
+export const CustomTabList = styled(TabList)`
+  > button {
+    font-size: var(--small-text-size);
+    letter-spacing: var(--small-text-spacing);
+    font-weight: 400;
+    text-transform: var(--small-text-transform);
+    color: grey;
+  }
+`;
+
+export const BookList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  height: fit-content;
+  width: 100%;
+
+  > * {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+`;
+
+export const Book = styled.div`
+  display: flex;
+`;
+
+export const LargeBookCover = styled.img`
+  height: 230px;
+  width: auto;
+  margin-right: 1.5rem;
+`;
+
+export const BookInfo = styled.div`
+  h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+`;
+
+export const ProfileAvatarContainer = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  :hover {
+    img {
+      filter: brightness(50%);
+    }
+
+    > :first-child {
+      display: block;
+    }
+  }
+
+  > :first-child {
+    display: none;
+    position: absolute;
+    /* bottom: 0; */
+    z-index: 10;
+    font-size: 3.3rem;
+    color: #ffffff97;
+  }
 `;
 
 export const ProfileAvatar = styled(Avatar)`
@@ -31,6 +109,13 @@ export const ProfileAvatar = styled(Avatar)`
   min-height: 200px;
   height: auto;
   border-radius: 4%;
+
+  // TODO: this should only be allowed/appear if this is the current user's profile
+  // so create a separate component and just conditionally render it based on
+  // if it's the currently logged in user's own profile
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const About = styled.div`
@@ -53,6 +138,10 @@ export const About = styled.div`
     font-size: 0.9rem;
     color: #3d3d3d;
   }
+
+  > button:first-of-type {
+    position: relative;
+  }
 `;
 
 export const Stats = styled.div`
@@ -74,7 +163,7 @@ export const Stats = styled.div`
     }
 
     p {
-      font-size: 0.7rem;
+      font-size: var(--small-text-size);
       letter-spacing: 2px;
       font-weight: 600;
       color: grey;
@@ -96,6 +185,13 @@ export const Button = styled.button`
   font-weight: 800;
   letter-spacing: 1px;
   border-radius: 6px;
+
+  > p {
+    font-size: 0.75rem;
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
 `;
 
 interface FollowBtnProps {
@@ -139,6 +235,7 @@ export const FavoriteBooks = styled.div`
     }
 
     > :last-child {
+      cursor: pointer;
       position: relative;
       display: flex;
       justify-content: center;
