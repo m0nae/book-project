@@ -1,5 +1,7 @@
-import { FaHeart } from "react-icons/fa";
+import { FaHeart, FaRegEdit } from "react-icons/fa";
 import { FaRegComment, FaRegStar } from "react-icons/fa";
+import { CgCheck } from "react-icons/cg";
+
 import styled from "styled-components";
 
 interface HeartProps {
@@ -22,5 +24,13 @@ export const Comment = styled(FaRegComment)`
 `;
 
 export const Star = styled(FaRegStar)`
+  cursor: pointer;
+`;
+
+export const Check = styled(CgCheck)`
+  cursor: pointer;
+`;
+
+export const Edit = styled(FaRegEdit)`
   cursor: pointer;
 `;
