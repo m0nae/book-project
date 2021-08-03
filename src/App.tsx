@@ -1,5 +1,4 @@
 import { useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/Header";
 import styled from "styled-components";
@@ -8,6 +7,7 @@ import Sidebar from "./components/Sidebar";
 import { Switch } from "react-router";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Profile from "./components/pages/Profile";
+import { GlobalStyles } from "global-styles";
 
 const Main = styled.div`
   display: flex;
@@ -48,28 +48,31 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <Router>
-      <Switch>
-        <Route path="/profile">
-          <Profile />
-        </Route>
-        <Route path="/">
-          <div className="App">
-            <Header />
-            <Main>
-              <Feed>
-                <Post />
-                <Post />
-                <Post />
-              </Feed>
-              <SidebarContain>
-                <Sidebar />
-              </SidebarContain>
-            </Main>
-          </div>
-        </Route>
-      </Switch>
-    </Router>
+    <>
+      <GlobalStyles />
+      <Router>
+        <Switch>
+          <Route path="/profile">
+            <Profile />
+          </Route>
+          <Route path="/">
+            <div className="App">
+              <Header />
+              <Main>
+                <Feed>
+                  <Post />
+                  <Post />
+                  <Post />
+                </Feed>
+                <SidebarContain>
+                  <Sidebar />
+                </SidebarContain>
+              </Main>
+            </div>
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
 
