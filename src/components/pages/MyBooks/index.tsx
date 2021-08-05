@@ -65,6 +65,17 @@ export default function MyBooks() {
     }
   }, [selectedReadingList]);
 
+  const readingListTitle = useCallback(() => {
+    switch (selectedReadingList) {
+      case "all":
+        return "My Books";
+      case "currently-reading":
+        return "Currently Reading";
+      default:
+        return "My Books";
+    }
+  }, [selectedReadingList]);
+
   // function readingListView() {
   //   switch(selectedReadingList) {
   //     case 'all':
@@ -105,7 +116,7 @@ export default function MyBooks() {
           <p>Favorites</p>
         </Sidebar>
         <Main>
-          <h1>My Books</h1>
+          <h1>{readingListTitle()}</h1>
           <div>{readingListView()}</div>
         </Main>
       </Wrapper>

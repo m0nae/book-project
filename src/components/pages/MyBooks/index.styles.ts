@@ -36,6 +36,12 @@ export const Main = styled.div`
   margin-left: 25vw;
   width: auto;
 
+  > h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem 0 1rem 1rem;
+  }
+
   > div {
     display: flex;
     flex-wrap: wrap;
