@@ -9,7 +9,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Profile from "./components/pages/Profile";
 import { GlobalStyles } from "global-styles";
 import MyBooks from "./components/pages/MyBooks";
-import MessageBar from "./components/MessageBar";
+import MessageBar from "./components/pages/Messages";
+import Settings from "components/pages/Settings";
 
 const Main = styled.div`
   display: flex;
@@ -54,6 +55,9 @@ function App() {
       <GlobalStyles />
       <Router>
         <Switch>
+          <Route path="/settings">
+            <Settings />
+          </Route>
           <Route path="/messages">
             <MessageBar />
           </Route>
