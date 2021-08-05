@@ -32,8 +32,8 @@ export default function Header({ staticPosition }: HeaderProps) {
             <Logo>BOOKLY</Logo>
             <Links>
               <Link href="http://localhost:3000">Home</Link>
-              <Link>My Books</Link>
-              <Link>Browse</Link>
+              <Link href="/my-books">My Books</Link>
+              <Link href="/browse">Browse</Link>
             </Links>
           </Left>
           <Right>
