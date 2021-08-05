@@ -16,9 +16,10 @@
     "jsx": "react-jsx",
     "paths": {
       "global-styles": ["./src/global.styles.ts"],
-      "components/*": ["./src/components"],
-      "src/*": ["./src"],
-      "pages/*": ["./src/components/pages"]
+      "components/*": ["./src/components/*"],
+      "src/*": ["./src/*"],
+      "pages/*": ["./src/components/pages/*"],
+      "@/*": ["./src/*"]
     }
   },
   "include": ["./src"]
