@@ -1,4 +1,13 @@
-import { Heart, Comment, Star, Check, Edit } from "./index.styles";
+import {
+  Heart,
+  Comment,
+  Star,
+  Check,
+  Edit,
+  HorizontalDots,
+  Send,
+  LeftArrow,
+} from "./index.styles";
 
 const icon = {
   Heart,
@@ -6,6 +15,9 @@ const icon = {
   Star,
   Check,
   Edit,
+  HorizontalDots,
+  Send,
+  LeftArrow,
 };
 
 export default icon;
