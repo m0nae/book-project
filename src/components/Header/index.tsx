@@ -10,20 +10,12 @@ import {
   Search,
 } from "./index.styles";
 import {
-  Button,
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuIcon,
-  MenuCommand,
-  MenuDivider,
   useDisclosure,
 } from "@chakra-ui/react";
-import { useRef } from "react";
 
 export interface HeaderProps {
   staticPosition?: boolean;
@@ -32,17 +24,9 @@ export interface HeaderProps {
 export default function Header({ staticPosition }: HeaderProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  // const handleHover = () => {
-  //   setTimeout(() => {
-  //     if () {
-
-  //     }
-  //   }, 1500);
-  // };
-
   return (
     <>
-      <Wrapper>
+      <Wrapper staticPosition={staticPosition}>
         <Container>
           <Left>
             <Logo>BOOKLY</Logo>

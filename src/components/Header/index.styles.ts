@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
+interface HeaderProps {
+  staticPosition?: boolean;
+}
+
 export const Wrapper = styled.div`
-  position: sticky;
+  position: ${(props: HeaderProps) =>
+    props.staticPosition ? "static" : "sticky"};
   top: 0;
   border-bottom: 2px solid whitesmoke;
   width: 100%;
