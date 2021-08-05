@@ -1,4 +1,5 @@
 import icon from "../icons";
+import { Progress } from "@chakra-ui/react";
 import {
   PostAvatar,
   CommentAvatar,
@@ -33,7 +34,7 @@ export default function Post() {
               <span>16h</span>
             </StatusTop>
             <StatusBottom>
-              <ProgressBar value="70" max="100" />
+              <Progress borderRadius="xl" value={70} />
               <p>pg 70 of 100</p>
             </StatusBottom>
           </Status>

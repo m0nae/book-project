@@ -40,6 +40,7 @@ export const Status = styled.div`
 
 export const StatusTop = styled.div`
   display: flex;
+  width: 100%;
 `;
 
 export const StatusBottom = styled.div`
@@ -48,6 +49,12 @@ export const StatusBottom = styled.div`
   margin: 1rem 0;
   font-size: 0.8rem;
   font-weight: 700;
+  width: 100%;
+
+  > div {
+    width: 50%;
+    margin-right: 1rem;
+  }
 `;
 
 export const ProgressBar = styled.progress`
