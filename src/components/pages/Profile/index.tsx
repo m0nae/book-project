@@ -13,11 +13,10 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 import Header from "../../Header";
+import ChangeAvatar from "components/ChangeAvatar";
 import {
   Main,
   About,
-  ProfileAvatarContainer,
-  ProfileAvatar,
   Sidebar,
   Wrapper,
   FollowBtn,
@@ -118,16 +117,7 @@ export default function Profile() {
       <Wrapper>
         <Sidebar>
           <About>
-            <ProfileAvatarContainer>
-              <label htmlFor="photo-upload">
-                <icon.Edit />
-              </label>
-              <input type="file" id="photo-upload" name="photo-upload" />
-              <ProfileAvatar
-                src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-                alt="Profile picture"
-              />
-            </ProfileAvatarContainer>
+            <ChangeAvatar />
             <h1>Jane Doe</h1>
             <p>San Francisco, CA</p>
             <Stats>
