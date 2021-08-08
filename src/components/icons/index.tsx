@@ -7,6 +7,8 @@ import {
   HorizontalDots,
   Send,
   LeftArrow,
+  LeftChevron,
+  RightChevron,
 } from "./index.styles";
 
 const icon = {
@@ -18,6 +20,8 @@ const icon = {
   HorizontalDots,
   Send,
   LeftArrow,
+  LeftChevron,
+  RightChevron,
 };
 
 export default icon;
