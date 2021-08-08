@@ -1,10 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  position: fixed;
   margin-top: 1rem;
   margin-bottom: 6rem;
-  width: 21%;
   min-height: 100vh;
   height: fit-content;
   min-height: 98%;
