@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   height: 89vh;
   max-height: 100%;
   overflow-y: hidden;
+  display: flex;
 `;
 
 export const Sidebar = styled.div`
@@ -14,7 +15,7 @@ export const Sidebar = styled.div`
   flex-direction: column;
   height: 90vh;
   padding: 1rem 0;
-  position: fixed;
+  /* position: fixed; */
   top: 80px;
   left: 0;
   width: 28%;
@@ -30,8 +31,8 @@ export const Sidebar = styled.div`
 export const Main = styled.div`
   position: relative;
   height: 100%;
-  margin-left: 28vw;
-  width: auto;
+  /* margin-left: 28vw; */
+  width: 100%;
 
   header {
     display: flex;
@@ -48,7 +49,7 @@ export const Main = styled.div`
     align-items: center;
     background-color: white;
     height: fit-content;
-    width: 98%;
+    width: 97%;
     bottom: 0;
     padding: 1rem 2rem;
     padding-bottom: 1rem;
