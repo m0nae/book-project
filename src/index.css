@@ -18,3 +18,65 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.paginate-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  justify-self: center;
+  top: 90vh;
+}
+
+.paginate-container > li {
+  padding: 0.5rem 0.3rem;
+}
+
+.paginate-active-btn {
+  border-radius: 4px;
+  background-color: var(--dark-red);
+  color: white !important;
+  padding: 0.5rem 0.7rem !important;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+
+.paginate-link {
+  padding: 0.5rem 0.6rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: rgb(172, 172, 172);
+}
+
+.paginate-active-link {
+  color: white;
+}
+
+.paginate-break {
+  color: rgb(172, 172, 172);
+}
+
+.paginate-next,
+.paginate-back {
+  align-self: center;
+  color: rgb(172, 172, 172);
+  border-radius: 5px;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: 1.7rem;
+}
+
+/* remove list dots */
+
+.paginate-btn::marker {
+  content: none;
+}
+
+.paginate-break::marker {
+  content: none;
+}
+
+.paginate-container > li::marker {
+  content: none;
+}

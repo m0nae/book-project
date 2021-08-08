@@ -91,24 +91,22 @@ export default function MyBooks() {
     <>
       <Header />
       <Wrapper>
-        <Sidebar>
-          {/* TODO: these are going to be hidden radio btns */}
-          <input
-            type="radio"
-            name="readingList"
-            id="all"
-            value="all"
-            checked={selectedReadingList === "all"}
-            onChange={() => setSelectedReadingList("all")}
-          />
-          <label htmlFor="all">All</label>
-          <input
-            type="radio"
-            name="readingList"
-            value="currently-reading"
-            id="currently-reading"
-            checked={selectedReadingList === "currently-reading"}
-            onChange={() => setSelectedReadingList("currently-reading")}
+          {showPagination && (
+            <ReactPaginate
+              forcePage={currentPage}
+              pageCount={Math.ceil(readingListView.length / 30)}
+              pageRangeDisplayed={3}
+              marginPagesDisplayed={3}
+              containerClassName="paginate-container"
+              pageLinkClassName="paginate-link"
+              breakClassName="paginate-break"
+              nextClassName="paginate-next"
+              previousClassName="paginate-back"
+              activeLinkClassName="paginate-active-btn"
+              breakLinkClassName="paginate-break"
+              previousLabel={<icon.LeftChevron />}
+              nextLabel={<icon.RightChevron />}
+              onPageChange={(pg: any) => setCurrentPage(pg.selected)}
           />
           <label htmlFor="currently-reading">Currently Reading</label>
           <p>Read</p>
