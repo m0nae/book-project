@@ -14,7 +14,7 @@ export const Sidebar = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 4rem 1rem;
+  padding: 4rem 0.5rem;
   /* max-height: */
   height: 90vh;
   position: fixed;
@@ -22,16 +22,20 @@ export const Sidebar = styled.div`
   left: 0;
   width: 25%;
   font-size: 1.3rem;
-  font-weight: 600;
   background-color: #dbdbdb;
 
   > * {
     cursor: pointer;
     margin-bottom: 1rem;
   }
+
+  > label > input {
+    visibility: hidden;
+  }
 `;
 
 export const Main = styled.div`
+  position: relative;
   height: 100%;
   margin-left: 25vw;
   width: auto;
@@ -39,7 +43,7 @@ export const Main = styled.div`
   > h1 {
     font-size: 2rem;
     font-weight: 700;
-    padding: 1rem 0 1rem 1rem;
+    padding: 1rem 0 1rem 2rem;
   }
 
   > div {
@@ -48,7 +52,7 @@ export const Main = styled.div`
     justify-content: flex-start;
     padding: 0 2rem;
 
-    > * {
+    > img {
       margin-bottom: 1rem;
     }
   }
