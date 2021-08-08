@@ -297,3 +297,32 @@ export const readingLists: ReadingLists = [
     books: listBooks(6),
   },
 ];
+
+interface Comment {
+  user: string;
+  posted: string;
+  edited: string;
+  contents: string;
+}
+
+type Comments = Comment[];
+
+const commentOne = {
+  user: "janedoe",
+  posted: "foobar",
+  edited: "baz",
+  contents:
+    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis eius architecto, hic natus rerum debitis quas officiis! Maiores velit voluptas voluptatem atque, rem illum cumque modi reprehenderit quisquam repellat nemo.",
+};
+
+const listComments = (num: number, comment: Comment = commentOne) => {
+  let arr = [];
+
+  for (let i = 0; i < num; i++) {
+    arr.push(comment);
+  }
+
+  return arr as Comments;
+};
+
+export const comments: Comments = listComments(5, commentOne);
