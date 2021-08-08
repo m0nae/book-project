@@ -234,3 +234,66 @@ export const userThree = {
     },
   ],
 };
+
+// in the real backend, i might just take the "titles" from the user,
+// make it all lowercase, and replace the spaces with hyphens to
+// automatically make it into the "name"
+
+// this means that reading lists with duplicate titles/names will NOT be allowed
+
+// and each user has their own table of reading lists/reading lists have "ownere"
+// so no need to worry about name clashes of reading lists among different users
+
+// also, impose character limits and other restrictions to the titles!
+
+type GenericArray = Array<Object | null>;
+type Book = {
+  img: string;
+};
+type ReadingLists = {
+  name: string;
+  title: string;
+  books: Book[];
+}[];
+
+const bookOne = {
+  img: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1298417783l/23425.jpg",
+};
+
+const listBooks = (num: number, book: Book = bookOne) => {
+  let arr = [];
+
+  for (let i = 0; i < num; i++) {
+    arr.push(book);
+  }
+
+  return arr as ReadingLists[0]["books"];
+};
+
+export const readingLists: ReadingLists = [
+  {
+    name: "all",
+    title: "All",
+    books: listBooks(8),
+  },
+  {
+    name: "currently-reading",
+    title: "Currently Reading",
+    books: listBooks(33),
+  },
+  {
+    name: "read",
+    title: "Read",
+    books: listBooks(300),
+  },
+  {
+    name: "want-to-read",
+    title: "Want to Read",
+    books: listBooks(1),
+  },
+  {
+    name: "favorites",
+    title: "Favorites",
+    books: listBooks(6),
+  },
+];
