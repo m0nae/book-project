@@ -10,9 +10,9 @@ import {
   PopoverCloseButton,
 } from "@chakra-ui/react";
 import ReactPaginate from "react-paginate";
-import Header from "../../Header";
+import Header from "components/Header";
 import Option from "components/Option";
-import { LargeBookCover } from "../Profile/index.styles";
+import { LargeBookCover } from "pages/Profile/index.styles";
 import { Main, Sidebar, Wrapper } from "./index.styles";
 
 import { readingLists as READINGLISTS } from "src/dummyData";

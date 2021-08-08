@@ -6,8 +6,11 @@ import {
   MenuList,
   MenuItem,
 } from "@chakra-ui/react";
-import Header from "../../Header";
-import { MyChatMessage, TheirChatMessage } from "../../ChatMessage";
+import Header from "components/Header";
+import {
+  MyChatMessage,
+  TheirChatMessage,
+} from "src/pages/Messages/ChatMessage";
 import {
   Main,
   Sidebar,
@@ -20,7 +23,7 @@ import {
   SendIcon,
 } from "./index.styles";
 import { userOne, userTwo, userThree } from "@/dummyData";
-import SidebarChat from "components/SidebarChat";
+import SidebarChat from "src/pages/Messages/SidebarChat";
 
 export default function MessageBar() {
   // the currently logged in user

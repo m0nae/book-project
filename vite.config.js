@@ -16,7 +16,7 @@ export default defineConfig({
       },
       {
         find: "pages",
-        replacement: resolve(__dirname, "src/components/pages"),
+        replacement: resolve(__dirname, "src/pages"),
       },
       {
         find: "src",

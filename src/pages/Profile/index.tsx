@@ -12,7 +12,7 @@ import {
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
-import Header from "../../Header";
+import Header from "components/Header";
 import ChangeAvatar from "components/ChangeAvatar";
 import {
   Main,
@@ -32,7 +32,7 @@ import {
   CustomTabList as TabList,
   CustomTabPanel as TabPanel,
 } from "./index.styles";
-import icon from "../../icons";
+import icon from "components/icons";
 
 export default function Profile() {
   const { isOpen, onOpen, onClose } = useDisclosure();

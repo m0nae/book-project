@@ -93,6 +93,10 @@ export const Actions = styled.div`
 export const SocialActions = styled.div`
   display: flex;
   align-items: center;
+
+  > :first-child {
+    margin-right: 0.5rem;
+  }
 `;
 
 export const Comment = styled.div`
@@ -116,9 +120,45 @@ export const CommentInput = styled.input`
   height: 60%;
   width: 90%;
   padding-left: 0.5rem;
+  border-radius: 2px;
 `;
 
 export const Rating = styled.div`
   display: flex;
   align-items: center;
+`;
+
+export const DisplayComments = styled.div`
+  background-color: #e2e2e2;
+  margin-top: -5px;
+  /* min-height: 150px; */
+  height: ${(props: any) => (props.displayComments ? "fit-content" : "0")};
+  display: ${(props: any) => (props.displayComments ? "flex" : "none")};
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1rem;
+
+  h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    /* margin-bottom: 0.2rem; */
+  }
+
+  img {
+    align-self: flex-start !important;
+    height: 30px;
+    width: 30px;
+  }
+
+  > div {
+    text-align: left;
+  }
+
+  > div > div {
+    align-self: center;
+  }
+
+  > * > div {
+    width: 90%;
+  }
 `;

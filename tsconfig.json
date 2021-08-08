@@ -18,7 +18,7 @@
       "global-styles": ["./src/global.styles.ts"],
       "components/*": ["./src/components/*"],
       "src/*": ["./src/*"],
-      "pages/*": ["./src/components/pages/*"],
+      "pages/*": ["./src/pages/*"],
       "@/*": ["./src/*"]
     }
   },
