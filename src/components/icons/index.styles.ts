@@ -1,7 +1,8 @@
-import { FaHeart, FaRegEdit, FaRegComment, FaRegStar } from "react-icons/fa";
+import { FaHeart, FaRegEdit, FaRegComment } from "react-icons/fa";
 import { CgCheck } from "react-icons/cg";
 import { HiDotsHorizontal, HiArrowLeft } from "react-icons/hi";
 import { IoSend } from "react-icons/io5";
+import { IoIosStar } from "react-icons/io";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 import styled from "styled-components";
@@ -16,8 +17,10 @@ export const Comment = styled(FaRegComment)`
   cursor: pointer;
 `;
 
-export const Star = styled(FaRegStar)`
+export const Star = styled(IoIosStar)`
   cursor: pointer;
+  color: #b3b3b3;
+  font-size: 1.1rem;
 `;
 
 export const Check = styled(CgCheck)`
