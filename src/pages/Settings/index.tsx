@@ -23,7 +23,7 @@ import {
 } from "./index.styles";
 import { useHistory } from "react-router-dom";
 import icon from "components/icons";
-import SettingsForm from "components/SettingsForm";
+import SettingsForm from "src/pages/Settings/SettingsForm";
 
 export default function Settings() {
   const [isOpen, setIsOpen] = useState(false);
