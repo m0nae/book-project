@@ -38,8 +38,6 @@ export default function Header({ staticPosition }: HeaderProps) {
           </Left>
           <Right>
             <Search placeholder="Search" />
-            <Link>BAR</Link>
-            <Link>BAR</Link>
             <Link>
               <Menu isOpen={isOpen} autoSelect>
                 <MenuButton onMouseEnter={onOpen}>

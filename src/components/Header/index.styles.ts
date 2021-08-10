@@ -46,9 +46,11 @@ export const Link = styled.a`
 export const Left = styled.div`
   display: flex;
   align-items: center;
+  font-weight: 600;
 `;
 
 export const Right = styled(Left)`
+  font-weight: 500;
   > * {
     margin-right: 0.7rem;
   }
