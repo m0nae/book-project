@@ -299,20 +299,28 @@ export const readingLists: ReadingLists = [
 ];
 
 interface Comment {
+  name: string;
   user: string;
   posted: string;
   edited: string;
-  contents: string;
+  content: string;
 }
 
 type Comments = Comment[];
 
 const commentOne = {
+  name: "Jane Doe",
   user: "janedoe",
   posted: "foobar",
   edited: "baz",
-  contents:
+  content:
     "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis eius architecto, hic natus rerum debitis quas officiis! Maiores velit voluptas voluptatem atque, rem illum cumque modi reprehenderit quisquam repellat nemo.",
+};
+
+const commentTwo = {
+  ...commentOne,
+  content:
+    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis eius architecto, hic natus rerum debitis quas officiis! Maiores velit voluptas voluptatem atque, rem illum cumque modi reprehenderit quisquam repellat nemo. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis eius architecto, hic natus rerum debitis quas officiis! Maiores velit voluptas voluptatem atque, rem illum cumque modi reprehenderit quisquam repellat nemo.",
 };
 
 const listComments = (num: number, comment: Comment = commentOne) => {
@@ -325,4 +333,11 @@ const listComments = (num: number, comment: Comment = commentOne) => {
   return arr as Comments;
 };
 
-export const comments: Comments = listComments(5, commentOne);
+// export const comments: Comments = listComments(5, commentOne);
+export const comments: Comments = [
+  commentOne,
+  commentTwo,
+  commentOne,
+  commentTwo,
+  commentOne,
+];
