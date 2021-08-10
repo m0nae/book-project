@@ -4,6 +4,7 @@ import { HiDotsHorizontal, HiArrowLeft } from "react-icons/hi";
 import { IoSend } from "react-icons/io5";
 import { IoIosStar } from "react-icons/io";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { BsPlus } from "react-icons/bs";
 
 import styled from "styled-components";
 
@@ -49,4 +50,9 @@ export const LeftChevron = styled(FiChevronLeft)`
 
 export const RightChevron = styled(FiChevronRight)`
   cursor: pointer;
+`;
+
+export const Plus = styled(BsPlus)`
+  cursor: pointer;
+  font-size: 1.4rem;
 `;

@@ -9,6 +9,7 @@ import {
   LeftArrow,
   LeftChevron,
   RightChevron,
+  Plus,
 } from "./index.styles";
 
 const icon = {
@@ -22,6 +23,7 @@ const icon = {
   LeftArrow,
   LeftChevron,
   RightChevron,
+  Plus,
 };
 
 export default icon;
