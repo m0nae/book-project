@@ -12,6 +12,7 @@ import MyBooks from "pages/MyBooks";
 import MessageBar from "pages/Messages";
 import Settings from "pages/Settings";
 import Home from "pages/Home";
+import Search from "./pages/Search";
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
       <GlobalStyles />
       <Router>
         <Switch>
+          <Route path="/search">
+            <Search />
+          </Route>
           <Route path="/settings">
             <Settings />
           </Route>
